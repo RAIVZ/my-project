@@ -64,137 +64,15 @@ main {
 	flex-grow: 1;
 }
 
-.container {
-	background-color: #c5b1b1;
-	width: 90%;
-	max-width: 1200px;
-	margin: 0 auto; /* Центрируем */
-	display: grid;
-	height: 100%;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 10px;
-
-}
-.grid-replenish {
-	cursor: pointer;
-	flex: 1;
-	background: lightblue;
-	padding: 20px;
-	text-align: center;
-  }
-  .grid-replenish:hover {
-	background-color: #24c5bd;
-  }
-  .grid-take {
-	cursor: pointer;
-	flex: 1;
-	background: lightblue;
-	padding: 20px;
-	text-align: center;
-  }
-  .grid-take:hover {
-	background-color: #24c5bd;
-  }
-  .grid-examination {
-	cursor: pointer;
-	flex: 1;
-	background: lightblue;
-	padding: 20px;
-	text-align: center;
-  }
-  .grid-examination:hover {
-	background-color: #24c5bd;
-  }
-
-
-input {
-	text-align: center;
-}
 
 
 
-@media (max-width: 1024px) {
-	.container {
-		display: flex;
-		flex-direction: column;
-	}
-  }
-  
-  @media (max-width: 768px) {
-	.container {
-	  padding: 10px;
-	  display: flex;
 
-	}
-  }
-  
-  @media (max-width: 480px) {
-	.container {
-	  width: 100%;
-	  padding: 5px;
-	}
-  }
-/* Скрываем бургер на больших экранах */
-.burger-menu {
-	display: none;
-	font-size: 24px;
-	background: none;
-	border: none;
-	cursor: pointer;
-  }
-  
-  /* Делаем меню flex (по умолчанию горизонтальное) */
-  .nav-list {
-	display: flex;
-	gap: 20px;
-  }
-  
-  /* Медиазапрос: на мобильных показываем бургер и скрываем меню */
-  @media (max-width: 768px) {
-	.burger-menu {
-	  display: block;
-	}
-  
-	.nav-list {
-	  display: none; /* Скрываем меню */
-	  flex-direction: column;
-	  position: absolute;
-	  top: 50px;
-	  left: 0;
-	  width: 100%;
-	  background: white;
-	  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	  padding: 10px;
-	}
-  
-	/* Когда меню открыто — показываем */
-	.nav-list.active {
-	  display: flex;
-	}
-  }
+
+
 
 footer {
 	padding-inline: 100px;
 	height: 80px;
 	background-color: blue;
 } 
-
-body {
-	font-size: 1rem; /* 16px по умолчанию */
-  }
-  
-  h1 {
-	font-size: 2rem; /* В 2 раза больше основного шрифта (32px) */
-  }
-  
-  p {
-	font-size: 1em; /* То же, что и у родителя */
-  }
-  
-  .small-text {
-	font-size: 0.8rem; /* Чуть меньше обычного текста */
-  }
-  
-  .big-text {
-	font-size: 5vw; /* Размер зависит от ширины экрана */
-  }
