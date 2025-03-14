@@ -16,9 +16,11 @@ li {
 	list-style: none;
 }
 img {
-	vertical-align: top;
 	max-width: 100%;
-	height: auto; 
+	height: auto;
+	margin: 0 auto; 
+	display: block;
+	vertical-align: top;
 }
 
 h1,
@@ -73,12 +75,42 @@ main {
 	gap: 10px;
 
 }
-.grid-item {
+.grid-replenish {
+	cursor: pointer;
 	flex: 1;
 	background: lightblue;
 	padding: 20px;
 	text-align: center;
   }
+  .grid-replenish:hover {
+	background-color: #24c5bd;
+  }
+  .grid-take {
+	cursor: pointer;
+	flex: 1;
+	background: lightblue;
+	padding: 20px;
+	text-align: center;
+  }
+  .grid-take:hover {
+	background-color: #24c5bd;
+  }
+  .grid-examination {
+	cursor: pointer;
+	flex: 1;
+	background: lightblue;
+	padding: 20px;
+	text-align: center;
+  }
+  .grid-examination:hover {
+	background-color: #24c5bd;
+  }
+
+
+input {
+	text-align: center;
+}
+
 
 
 @media (max-width: 1024px) {
@@ -147,31 +179,22 @@ footer {
 	background-color: blue;
 } 
 
-.table-container {
-	width: 100%;
-	overflow-x: auto; /* Добавляем горизонтальную прокрутку */
+body {
+	font-size: 1rem; /* 16px по умолчанию */
   }
   
-  .table {
-	width: 100%;
-	border-collapse: collapse;
+  h1 {
+	font-size: 2rem; /* В 2 раза больше основного шрифта (32px) */
   }
   
-  th, td {
-	border: 1px solid #ccc;
-	padding: 10px;
-	text-align: left;
+  p {
+	font-size: 1em; /* То же, что и у родителя */
   }
   
-  th {
-	background: #007bff;
-	color: white;
+  .small-text {
+	font-size: 0.8rem; /* Чуть меньше обычного текста */
   }
   
-  /* Делаем таблицу удобнее на маленьких экранах */
-  @media (max-width: 600px) {
-	th, td {
-	  padding: 8px;
-	  font-size: 14px;
-	}
+  .big-text {
+	font-size: 5vw; /* Размер зависит от ширины экрана */
   }
