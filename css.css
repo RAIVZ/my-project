@@ -114,6 +114,7 @@ header {
 		right: 0;
 		height: 143px;
 		align-items: flex-end;
+		
 }
 .test {
 	display: flex;
@@ -151,7 +152,9 @@ header {
     display: flex;
     justify-content: center;
 	gap: 20px;
+	
 }
+
 
 .nav ul {
 	display: flex;
@@ -164,6 +167,11 @@ header {
 .nav a {
 	color: #332F36;
 	text-decoration: none;
+}
+
+
+.header-burger {
+	display: none;
 }
 .social-networks {
 	display: flex;
@@ -253,6 +261,26 @@ header {
 
 /* АДПТИВ ХЕДЕРА */
 
+@media (max-width: 767px) {
+	.header-button {
+		display: none;
+	}
+	.social-networks {
+		display: none;
+	}
+	.header-menu {
+		display: none;
+	}
+	.header-burger {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+	}
+
+
+}
+
 @media (max-width: 1049px) {
 	.header-button {
 		display: none;
@@ -260,9 +288,10 @@ header {
 	.social-networks {
 		display: none;
 	}
+	.header-menu {
+		display: none;
+	}
 }
-
-
 
 
 /* СТИЛИЗАЦИЯ MAIN */
