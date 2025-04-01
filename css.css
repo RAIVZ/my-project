@@ -99,6 +99,7 @@ body {
 ._container {
 	max-width: 1046px;
 	margin: 0px auto;
+	padding: 0px;
 }
 
 
@@ -261,37 +262,6 @@ header {
 
 /* АДПТИВ ХЕДЕРА */
 
-@media (max-width: 767px) {
-	.header-button {
-		display: none;
-	}
-	.social-networks {
-		display: none;
-	}
-	.header-menu {
-		display: none;
-	}
-	.header-burger {
-		display: block;
-		position: relative;
-		width: 30px;
-		height: 20px;
-	}
-
-
-}
-
-@media (max-width: 1049px) {
-	.header-button {
-		display: none;
-	}
-	.social-networks {
-		display: none;
-	}
-	.header-menu {
-		display: none;
-	}
-}
 
 
 /* СТИЛИЗАЦИЯ MAIN */

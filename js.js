@@ -46,7 +46,44 @@
 //   alert(`Ваш баланс составляет: ${currentBalance}`);
 // });
 
-function toggleMenu() {
-    const menu = document.querySelector('.menu');
-    menu.classList.toggle('active');
+
+const form = document.querySelector('.form');
+const errorsDiv = document.querySelector('.errors');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  errorsDiv.textContent = ''; // очистка прошлых ошибок
+
+  const name = form.elements.name.value.trim();
+  const email = form.elements.email.value.trim();
+  const password = form.elements.password.value;
+  const agree = form.elements.agree.checked;
+
+  const errors = [];
+
+  if (name === '') {
+    errors.push('Введите имя');
   }
+
+  if (!email.includes('@')) {
+    errors.push('Введите корректный email');
+  }
+
+  if (password.length < 6) {
+    errors.push('Пароль должен быть не менее 6 символов');
+  }
+
+  if (!agree) {
+    errors.push('Вы должны принять условия');
+  }
+
+  if (errors.length > 0) {
+    errorsDiv.innerHTML = errors.map(err => `<div>${err}</div>`).join('');
+    return;
+  }
+
+  // Если ошибок нет — можно показать результат или отправить данные
+  console.log('Имя:', name);
+  console.log('Email:', email);
+});
