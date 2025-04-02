@@ -87,3 +87,13 @@ form.addEventListener('submit', function(event) {
   console.log('Имя:', name);
   console.log('Email:', email);
 });
+
+
+const tasks = ['учить js', 'делать проект'];
+
+localStorage.setItem('tasks', JSON.stringify(tasks)); // сохраняем
+
+const saved = localStorage.getItem('tasks');
+const parsed = JSON.parse(saved); // обратно в массив
+
+console.log(parsed);
