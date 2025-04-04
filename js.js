@@ -106,23 +106,7 @@ const taskList = document.querySelector('.shop-list');
 
 let arrShopList =  [];
 
-const renderTasks = () =>  {
-  taskList.innerHTML = '';
 
-  arrShopList.forEach((task, index) => {
-    const li = document.createElement('li');
-    li.textContent = task;
-
-   
-    li.addEventListener('click', () => {
-      arrShopList.splice(index, 1); 
-      localStorage.setItem('tasks', JSON.stringify(arrShopList));
-      renderTasks(); 
-    });
-
-    taskList.appendChild(li);
-  });
-}
 
 
 
@@ -136,12 +120,11 @@ if (save) {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const input = form.elements.task;
-  const text = input.value.trim();
+  const input = form.elements.task.value.trim;
 
-  if(text === '') return;
+  if(input === '') return;
 
-  arrShopList.push(text);
+  arrShopList.push(input);
   localStorage.setItem('arrShopList', JSON.stringify(arrShopList));
   renderTasks();
   input.value = '';
