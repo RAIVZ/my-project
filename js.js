@@ -122,7 +122,12 @@ form.addEventListener('submit', (event) => {
 
   const input = form.elements.task.value.trim;
 
-  if(input === '') return;
+  if(input.value.trim() === '') {
+    validation.textContent = 'Вы не заполнили поле ввода';
+    return
+  } else {
+      validation.textContent = '';
+    };
 
   arrShopList.push(input);
   localStorage.setItem('arrShopList', JSON.stringify(arrShopList));
