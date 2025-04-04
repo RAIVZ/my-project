@@ -143,11 +143,11 @@ const renderTasks = () =>  {
     const li = document.createElement('li');
     li.textContent = task;
 
-    // 👇 Добавляем обработчик на удаление
+   
     li.addEventListener('click', () => {
-      arrShopList.splice(index, 1); // удаляем 1 элемент по индексу
+      arrShopList.splice(index, 1); 
       localStorage.setItem('tasks', JSON.stringify(arrShopList));
-      renderTasks(); // перерисовываем список
+      renderTasks(); 
     });
 
     taskList.appendChild(li);
