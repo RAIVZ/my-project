@@ -106,8 +106,6 @@ const taskList = document.querySelector('.shop-list');
 
 let arrShopList =  [];
 
-
-
 const renderTasks = () =>  {
   taskList.innerHTML = '';
 
@@ -125,6 +123,8 @@ const renderTasks = () =>  {
     taskList.appendChild(li);
   });
 }
+
+
 
 
 const save = localStorage.getItem('arrShopList');
