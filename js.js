@@ -107,6 +107,26 @@ const taskList = document.querySelector('.shop-list');
 let arrShopList =  [];
 
 
+
+const renderTasks = () =>  {
+  taskList.innerHTML = '';
+
+  arrShopList.forEach((task, index) => {
+    const li = document.createElement('li');
+    li.textContent = task;
+
+   
+    li.addEventListener('click', () => {
+      arrShopList.splice(index, 1); 
+      localStorage.setItem('tasks', JSON.stringify(arrShopList));
+      renderTasks(); 
+    });
+
+    taskList.appendChild(li);
+  });
+}
+
+
 const save = localStorage.getItem('arrShopList');
 if (save) {
   arrShopList = JSON.parse(save);
@@ -136,28 +156,12 @@ form.addEventListener('submit', (event) => {
 //     taskList.appendChild(li);
 //   });
 // }
-const renderTasks = () =>  {
-  taskList.innerHTML = '';
 
-  arrShopList.forEach((task, index) => {
-    const li = document.createElement('li');
-    li.textContent = task;
-
-   
-    li.addEventListener('click', () => {
-      arrShopList.splice(index, 1); 
-      localStorage.setItem('tasks', JSON.stringify(arrShopList));
-      renderTasks(); 
-    });
-
-    taskList.appendChild(li);
-  });
-}
 
 const buttonClear = document.querySelector('.clear-tasks');
 
 buttonClear.addEventListener('click', () => {
   arrShopList =  [];
-  localStorage.removeItem('tasks'); 
+  localStorage.removeItem('arrShopList'); 
   renderTasks(); 
 });
