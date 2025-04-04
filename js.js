@@ -102,45 +102,62 @@
 
 
 const form = document.querySelector('.task-form');
-const taskList = document.querySelector('.task-list');
+const taskList = document.querySelector('.shop-list');
 
-let tasks = [];
+let arrShopList =  [];
 
-// Загружаем задачи из localStorage
-const saved = localStorage.getItem('tasks');
-if (saved) {
-  tasks = JSON.parse(saved);
+
+const save = localStorage.getItem('arrShopList');
+if (save) {
+  arrShopList = JSON.parse(save);
   renderTasks();
 }
 
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const input = form.elements.task;
   const text = input.value.trim();
 
-  if (text === '') return;
+  if(text === '') return;
 
-  tasks.push(text);
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  arrShopList.push(text);
+  localStorage.setItem('arrShopList', JSON.stringify(arrShopList));
   renderTasks();
   input.value = '';
 });
 
-function renderTasks() {
+// const renderTasks = () =>  {
+//   taskList.innerHTML = '';
+
+//   arrShopList.forEach((task) => {
+//     const li = document.createElement('li');
+//     li.textContent = task;
+//     taskList.appendChild(li);
+//   });
+// }
+const renderTasks = () =>  {
   taskList.innerHTML = '';
 
-  tasks.forEach((task) => {
+  arrShopList.forEach((task, index) => {
     const li = document.createElement('li');
     li.textContent = task;
+
+    // 👇 Добавляем обработчик на удаление
+    li.addEventListener('click', () => {
+      arrShopList.splice(index, 1); // удаляем 1 элемент по индексу
+      localStorage.setItem('tasks', JSON.stringify(arrShopList));
+      renderTasks(); // перерисовываем список
+    });
+
     taskList.appendChild(li);
   });
 }
 
-const clearBtn = document.querySelector('.clear-tasks');
+const buttonClear = document.querySelector('.clear-tasks');
 
-clearBtn.addEventListener('click', function () {
-  tasks = []; 
+buttonClear.addEventListener('click', () => {
+  arrShopList =  [];
   localStorage.removeItem('tasks'); 
   renderTasks(); 
 });
