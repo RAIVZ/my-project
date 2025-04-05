@@ -112,6 +112,7 @@ let arrShopList =  [];
 
 
 const save = localStorage.getItem('arrShopList');
+
 if (save) {
   arrShopList = JSON.parse(save);
   renderTasks();
@@ -144,7 +145,23 @@ form.addEventListener('submit', (event) => {
 //     taskList.appendChild(li);
 //   });
 // }
+function renderTasks ()  {
+  taskList.innerHTML = '';
 
+  arrShopList.forEach((task, index) => {
+    const li = document.createElement('li');
+    li.textContent = task;
+
+    // 👇 Добавляем обработчик на удаление
+    li.addEventListener('click', () => {
+      arrShopList.splice(index, 1); // удаляем 1 элемент по индексу
+      localStorage.setItem('tasks', JSON.stringify(arrShopList));
+      renderTasks(); // перерисовываем список
+    });
+
+    taskList.appendChild(li);
+  });
+}
 
 const buttonClear = document.querySelector('.clear-tasks');
 
