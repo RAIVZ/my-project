@@ -121,7 +121,7 @@ if (save) {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const input = form.elements.task.value.trim;
+  const input = form.elements.task.value.trim();
 
   if(input.value.trim() === '') {
     validation.textContent = 'Вы не заполнили поле ввода';
