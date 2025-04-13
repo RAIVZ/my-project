@@ -101,40 +101,40 @@
 
 
 
-const form = document.querySelector('.task-form');
-const taskList = document.querySelector('.shop-list');
+// const form = document.querySelector('.task-form');
+// const taskList = document.querySelector('.shop-list');
 
-let arrShopList =  [];
-
-
+// let arrShopList =  [];
 
 
 
 
-const save = localStorage.getItem('arrShopList');
 
-if (save) {
-  arrShopList = JSON.parse(save);
-  renderTasks();
-}
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
+// const save = localStorage.getItem('arrShopList');
 
-  const input = form.elements.task.value.trim();
+// if (save) {
+//   arrShopList = JSON.parse(save);
+//   renderTasks();
+// }
 
-  if(input.value.trim() === '') {
-    validation.textContent = 'Вы не заполнили поле ввода';
-    return
-  } else {
-      validation.textContent = '';
-    };
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault();
 
-  arrShopList.push(input);
-  localStorage.setItem('arrShopList', JSON.stringify(arrShopList));
-  renderTasks();
-  input.value = '';
-});
+//   const input = form.elements.task.value.trim();
+
+//   if(input.value.trim() === '') {
+//     validation.textContent = 'Вы не заполнили поле ввода';
+//     return
+//   } else {
+//       validation.textContent = '';
+//     };
+
+//   arrShopList.push(input);
+//   localStorage.setItem('arrShopList', JSON.stringify(arrShopList));
+//   renderTasks();
+//   input.value = '';
+// });
 
 // const renderTasks = () =>  {
 //   taskList.innerHTML = '';
@@ -145,28 +145,65 @@ form.addEventListener('submit', (event) => {
 //     taskList.appendChild(li);
 //   });
 // }
-function renderTasks ()  {
-  taskList.innerHTML = '';
+// function renderTasks ()  {
+//   taskList.innerHTML = '';
 
-  arrShopList.forEach((task, index) => {
-    const li = document.createElement('li');
-    li.textContent = task;
+//   arrShopList.forEach((task, index) => {
+//     const li = document.createElement('li');
+//     li.textContent = task;
 
-    // 👇 Добавляем обработчик на удаление
-    li.addEventListener('click', () => {
-      arrShopList.splice(index, 1); // удаляем 1 элемент по индексу
-      localStorage.setItem('tasks', JSON.stringify(arrShopList));
-      renderTasks(); // перерисовываем список
-    });
+//     // 👇 Добавляем обработчик на удаление
+//     li.addEventListener('click', () => {
+//       arrShopList.splice(index, 1); // удаляем 1 элемент по индексу
+//       localStorage.setItem('tasks', JSON.stringify(arrShopList));
+//       renderTasks(); // перерисовываем список
+//     });
 
-    taskList.appendChild(li);
-  });
-}
+//     taskList.appendChild(li);
+//   });
+// }
 
-const buttonClear = document.querySelector('.clear-tasks');
+// const buttonClear = document.querySelector('.clear-tasks');
 
-buttonClear.addEventListener('click', () => {
-  arrShopList =  [];
-  localStorage.removeItem('arrShopList'); 
-  renderTasks(); 
-});
+// buttonClear.addEventListener('click', () => {
+//   arrShopList =  [];
+//   localStorage.removeItem('arrShopList'); 
+//   renderTasks(); 
+// });
+
+
+
+
+// const promis = new Promise((resolve, reject) => {
+//   fetch('https://jsonplaceholder.typicode.com/todos/1')
+//     .then(response => {
+//       if (!response.ok) throw new Error("Ошибка ответа сервера");
+//       return response.json();
+//     })
+//     .then(data => {
+//       resolve(`Успешно: ${data.title}`); // используем данные
+//     })
+//     .catch(err => {
+//       reject(`Ошибка: ${err.message}`);
+//     });
+// });
+
+// promis.then(result => {
+//   console.log(result);
+// }).catch(error => {
+//   console.log(error);
+// });
+
+
+// async function getPost(id) {
+//   try {
+//     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+//     if (!res.ok) throw new Error(`GET ошибка: ${res.status}`);
+//     const data = await res.json();
+//     console.log('📦 GET:', data);
+//   } catch (err) {
+//     console.error('❌ GET:', err.message);
+//   }
+// }
+
+// getPost(1);
