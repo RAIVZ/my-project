@@ -7,41 +7,6 @@
 	border: 0;
 	box-sizing: border-box;
 }
-
-
-@font-face {
-	font-weight: 400; /* Соответствует значению normal */
-	font-family: Manrope;
-	src: url("/fonts/Manrope-Regular.ttf");
-}
-@font-face {
-	font-weight: 600; /* Соответствует значению SemiBold */
-	font-family: Manrope;
-	src: url("/fonts/Manrope-SemiBold.ttf");
-}
-@font-face {
-	font-weight: 300; /* Соответствует значению Light */
-	font-family: Manrope;
-	src: url("/fonts/Manrope-Light.ttf");
-}
-@font-face {
-	font-weight: 700; /* Соответствует значению Bold */
-	font-family: Manrope;
-	src: url("/fonts/Manrope-Bold.ttf");
-}
-@font-face {
-	font-weight: 700; /* Соответствует значению Bold */
-	font-family: HeliosExt;
-	src: url("/fonts/HeliosExt-Bold.otf");
-}
-@font-face {
-	font-weight: 400; /* Соответствует значению normal */
-	font-family: HeliosExt;
-	src: url("/fonts/HeliosExt.otf");
-}
-
-
-
 a {
 	text-decoration: none;
 }
@@ -51,21 +16,8 @@ li {
 	list-style: none;
 }
 img {
-	height: auto;
-	display: block;
 	vertical-align: top;
 }
-.background-img {
-	max-width: 100%;
-	height: auto;
-	margin: 0 auto; 
-	display: block;
-	vertical-align: top;
-
-}
-
-
-
 
 h1,
 h2,
@@ -84,14 +36,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(/img/Фон\ \(1\)\ \(2\).png);
 }
-
 .wrapper {
-    width: 100%;
 	min-height: 100%;
 	overflow: hidden;
 }
@@ -99,185 +45,22 @@ body {
 ._container {
 	max-width: 1046px;
 	margin: 0px auto;
-	padding: 0px;
 }
 
-
-
-
-
-
-/* СТИЛИЗАЦИЯ HEADER */ 
 header {
-		display: flex;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 143px;
-		align-items: flex-end;
-		
-}
-.test {
-	display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1417px;
-	width: 100%;
-	margin: 0 auto;
-	box-sizing: border-box;
-	height: 100px;
-}
-.header-container {
-    display: flex;
-    align-items: center;
-    max-width: 1417px;
-    margin: 0 auto; /* Центрируем */
-	width: 100%;
-	box-sizing: border-box;
-}
-.header-box {
-	
-	display: flex;
-    width: 100%;
-	border-radius: 30px;
-	height: 80px;
-	background-color: #cfe2ff9f;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 10%;
-}
-
-
-.header-menu {
-	flex-grow: 1;
-    display: flex;
-    justify-content: center;
-	gap: 20px;
-	
-}
-
-
-.nav ul {
-	display: flex;
-	gap: 45px;
-}
-.nav div {
-	display: none;
-}
-
-.nav a {
-	color: #332F36;
-	text-decoration: none;
-}
-
-
-.header-burger {
-	display: none;
-}
-.social-networks {
-	display: flex;
-	gap: 18px;
-	align-items: center;
-}
-.social-networks img {
-	cursor: pointer;
-
-}
-.social-networks img:hover {
-	cursor: pointer;
-
-	
-}
-.social-networks img:last-child {
-	cursor: pointer;
-    margin-right: 15px;
-}
-
-
-
-
-.header-button {
-	display: flex;
-	gap: 25px;
-}
-.button-exit {
-	width: 100px;
-	height: 45px;
-	background-color: #CFE2FF;
-	border-radius: 10px;
-	cursor: pointer;
-}
-.button-exit:hover {
-	box-shadow:inset 0px 0px 10px 0px #acc0df;
-	transition: 0.2s;
-	
-}
-.button-platform {
-	font-family: Manrope;
-	font-size: 14px;
-	font-weight: 700;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	border-radius: 10px;
-	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,40,187,1) 0%, rgba(53,126,235,1) 100%);
-	width: 250px;
-	transition: background 0.8s ease;
-	height: 45px;
-	gap: 10px;
-}
-
-.button-platform:after {
-	border-radius: 10px;
-	content: '';
-	position: absolute;
 	top: 0;
 	left: 0;
-	width: 250px;
-	height: 45px;
-	color: #fff;
-	text-decoration: none;
-	background: linear-gradient(271deg, rgba(2, 0, 36, 1) 0%, rgba(13, 40, 187, 1) 0%, rgba(53, 126, 235, 1) 100%);
-	opacity: 0;
-	transition: opacity 0.8s;
-}
-.button-platform:hover:after {
-	opacity: 1;
+	right: 0;
 }
 
-.button-platform img {
-	cursor: pointer;
-	z-index: 1;
-}
-.buttom-text {
-	cursor: pointer;
-	color: #ffffff;
-	z-index: 1;
-
-}
-
-
-
-/* АДПТИВ ХЕДЕРА */
-
-
-
-/* СТИЛИЗАЦИЯ MAIN */
 main {
+	background-color: #ffffff;
 	flex-grow: 1;
 }
-
-
-
-
-
-
-
 
 /* footer {
 	padding-inline: 100px;
 	height: 80px;
-	background-color: rgb(64, 64, 66);
-}  */
+	background-color: #636363;
+} 
+ */
