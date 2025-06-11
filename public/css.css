@@ -1,0 +1,183 @@
+/* Обнуление */
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+
+html, body {
+	height: 100%;
+	line-height: 1;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: visible;
+}
+
+._container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;   
+}
+
+header {
+	background-color: #0f1a2b;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 20px 0px rgba(47,  86,  205, 0.5);
+	height: 80px;
+	width: 100%; 
+	position: relative;
+	z-index: 10; 
+	top: 0;
+	left: 0;
+	right: 0;
+	max-width: none;       /* отменить любые max-width */
+	box-sizing: border-box;/* чтобы паддинги/бордеры не «вылазили» за границы */
+}
+
+main {
+	background-color: #ffffff;
+	flex-grow: 1;
+	main {
+  background: url('dungeon-stone.png') center/auto repeat;
+  background-size: 200px; /* повторяющийся мелкий паттерн */
+  padding: 20px;
+  color: #ddd;
+}
+}
+
+footer {
+	padding-inline: 20px;
+	height: 80px;
+	background-color: #636363;
+} 
+
+.header__inner {
+	margin: 0 auto; 
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+	box-sizing: border-box;
+}
+.header__nav-list {
+  display: flex;
+  gap: 24px;             /* интервал между ссылками */
+  list-style: none;
+}
+.header__nav-link {
+  color: #c89f56;        /* золотой, например */
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header__logout {
+  background: none;
+  border: 1px solid #c89f56;
+  color: #c89f56;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  border: 0; clip: rect(0,0,0,0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.button {
+  background: #c89f56;
+  border: none;
+  padding: 6px 12px;
+  color: #1b1f24;
+  border-radius:4px;
+  cursor:pointer;
+}
+.header__avatar-label { cursor: pointer; }
+.header__avatar { width:32px; height:32px; border-radius:50%; }
+
+/* РЕГИСТРАЦИЯ */
+.auth-section {
+  padding: 40px 20px;
+  background: rgba(0,0,0,0.6);
+}
+.auth__container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: rgba(30,30,30,0.9);
+  padding: 20px;
+  border-radius: 8px;
+}
+.auth__title {
+  font-size: 1.5rem;
+  color: #c89f56;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.auth__field {
+  margin-bottom: 15px;
+}
+.auth__field label {
+  display: block;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+}
+.auth__field input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #1b1f24;
+  color: #e0e0e0;
+}
+.auth__switch {
+  color: #c89f56;
+  text-decoration: none;
+}
+
+
+.main {
+	background: url(./img/анпр.jpg) center/cover no-repeat fixed;
+}
+
+.wer {
+	height: 100vh;
+}

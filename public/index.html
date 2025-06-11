@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css.css">
+	<title>мой тренинг</title>
+</head>
+<body >
+	<div class="wrapper">
+		<header class="header">
+	<div class="header__inner">
+	<!-- Лого -->
+	<img src="./img/EE.png" alt="" class="header__logo" width="70px">
+	<!-- Навигация -->
+	<nav class="header__nav">
+		<ul class="header__nav-list">
+			<li><a href="/" class="header__nav-link">Чат</a></li>
+			<li><a href="/profile" class="header__nav-link">Профиль</a></li>
+			<li><a href="/settings" class="header__nav-link">Настройки</a></li>
+		</ul>
+	</nav>
+	<!-- Профиль -->
+	<div class="header__actions">
+		<div class="header__login" id="headerLogin">
+			<button class="button" id="loginBtn">Войти</button>
+		</div>
+    
+    <!-- Секция для авторизованных -->
+    <div class="header__actions" id="headerUser" style="display:none;">
+		<label class="header__avatar-label">
+			<img src="" alt="Аватар" class="header__avatar" id="avatarImg">
+			<input type="file" accept="image/*" id="avatarInput" class="visually-hidden">
+		</label>
+		<button class="button" id="logoutBtn">Выйти</button>
+    </div>
+	</div>
+	</div>
+	</header>
+	<section class="auth-section">
+  <div class="auth__container">
+    <h2 class="auth__title">Регистрация</h2>
+    <form id="registerForm" class="auth__form">
+      <div class="auth__field">
+        <label for="username">Имя пользователя</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="auth__field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="auth__field">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="auth__field">
+        <label for="confirmPassword">Повторите пароль</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+      <button type="submit" class="button">Зарегистрироваться</button>
+    </form>
+    <p>Уже есть аккаунт? <a href="/login" class="auth__switch">Войти</a></p>
+  </div>
+</section>
+	<main class="main _container">
+		<section class="wer">
+		</section>
+	</main>
+	<footer>
+	</footer>
+	</div>
+	<script src="./script.js"></script>
+</body>
+</html> 
