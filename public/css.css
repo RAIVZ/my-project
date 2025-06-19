@@ -7,14 +7,23 @@
 	border: 0;
 	box-sizing: border-box;
 }
+/* Шрифт для заголовка */
+@font-face {
+	font-family: "UncialAntiqua";
+	src: url(./fonts/UncialAntiqua-Regular.ttf) format("opentype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
 /* Шрифт для заголовков */
 @font-face {
 	font-family: "HeliosExt";
 	src: url(./fonts/HeliosExt-Bold.otf) format("opentype");
 	font-weight: 700;
-	font-style: Bold;
+	font-style: normal;
 	font-display: swap;
 }
+
 /* Шрифт для текста */
 @font-face {
 	font-family: "Manrope";
@@ -95,9 +104,29 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: rgb(17, 0, 36);
+	background: #0C1212;
 	padding: 0 20px;
 	height: 80px;
+}
+/* ЛОГОТИП */
+.logo {
+  display: inline-flex;     
+  align-items: center;       
+  text-decoration: none;    
+}
+.logo__text {
+  font-family: "UncialAntiqua";
+  font-size: 18px;        
+  background: linear-gradient(90deg, #FFD700, #e49a4b);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow:
+  0 0 1em rgb(0, 255, 255),
+  0 0 0.2em rgb(0, 255, 255);        
+  user-select: none;         
+}
+.header__logo-image {
+  display: block;            /* убираем возможные отступы снизу */
 }
 /* Навигация */
 .header-nav {
@@ -149,8 +178,9 @@ header {
 	width: 80px;
 	height: 35px;
 	border-radius: 5px;
-	background: linear-gradient(135deg, #7C3AED, #A855F7);
+	background: #0C1212;
 	color: #ffffff;
+	border: 1px solid #FFD700;
 	cursor: pointer;
 	transition: 
     background-color 0.3s ease, 
@@ -159,7 +189,15 @@ header {
 }
 /* Плавный переход анимации кнопки */
 .header_button:hover {
-	background: linear-gradient(135deg, #8B5CF6, #C084FC);
+	background: linear-gradient(90deg, #FFD700, #e49a4b);
+	-webkit-background-clip: text;
+	color: transparent;
+	box-shadow:
+	0 0 1em rgb(0, 255, 255),
+	0 0 0.2em rgb(0, 255, 255);
+	text-shadow:
+	0 0 1em rgb(0, 255, 255),
+	0 0 0.2em rgb(0, 255, 255);
 	transform: scale(1.05);
 }
 .header_button:active {
@@ -187,7 +225,6 @@ header {
     padding: 1rem 0;
     text-align: center;
     z-index: 10;
-
 	background: rgba(17,0,36,0.95);
 	border-radius: 0 0 12px 12px;
 	box-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -227,11 +264,9 @@ main {
 	background-color: #ffffff;
 	flex-grow: 1;
 	height: 100vh;
-	background-image: url(./img/анпр.jpg);
 	background-size: cover;
 	background-repeat:no-repeat ;
 }
-
 
 footer {
 	padding-inline: 20px;
