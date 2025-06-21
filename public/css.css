@@ -73,16 +73,17 @@ h5,
 h6 {
 	font-weight: inherit;
 	font-size: inherit;
+	color: rgb(226, 226, 226); 
 }
 /* ТАЙТЛ H1 */
 .hero__title {
 	font-family: "HeliosExt", cursive;
 	font-size: 3rem;
 	font-weight: 700;
-	color: #000000;
 	margin-bottom: 1rem;
 	line-height: 1.2;
 }
+
 html, body {
 	height: auto;
 	line-height: 1;
@@ -98,12 +99,13 @@ html, body {
 	overflow: auto;
 }
 
-._container {
+/* ._container {
   max-width: 1340px;      
   width: 100%;            
   margin: 0 auto;        
-  padding: 0 20px;        
-}
+  padding: 0 20px;   
+   
+} */
 
 header {
 	position: relative;
@@ -126,12 +128,12 @@ header {
 .logo__text {
   font-family: "UncialAntiqua";
   font-size: 18px;        
-  background: linear-gradient(90deg, #FFD700, #e49a4b);
+  background: linear-gradient(90deg, #03c312, #00cfff);
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow:
-  0 0 1em rgb(0, 255, 255),
-  0 0 0.2em rgb(0, 255, 255);        
+  text-shadow: 
+  0 0 1em rgb(0 196 255), 
+  0 0 0.1em rgb(0 243 255);    
   user-select: none;         
 }
 .header__logo-image {
@@ -187,9 +189,9 @@ header {
 	width: 80px;
 	height: 35px;
 	border-radius: 5px;
-	background: #0C1212;
+	background: #0c121200;
 	color: #ffffff;
-	border: 1px solid #FFD700;
+	border: 1px solid #4fd1c5;
 	cursor: pointer;
 	transition: 
     background-color 0.3s ease, 
@@ -203,11 +205,9 @@ header {
 	color: transparent;
 	box-shadow:
 	0 0 1em rgb(0, 255, 255),
-	0 0 0.2em rgb(0, 255, 255);
-	text-shadow:
-	0 0 1em rgb(0, 255, 255),
-	0 0 0.2em rgb(0, 255, 255);
-	transform: scale(1.05);
+	0 0 0.1em rgb(0, 255, 255);
+	color:rgb(0, 255, 255);
+	transform: scale(1.02);
 }
 .header_button:active {
 	transform: scale(0.98);
@@ -274,30 +274,142 @@ header {
 }
 
 main {
-	background-color: #ffffff;
 	flex-grow: 1;
 	min-height: calc(100vh - 80px - 80px);
 	background-size: cover;
-	background-repeat:no-repeat ;
-	padding: 0 20px;
+	background-repeat:no-repeat;
 }
-.hero__inner {
+.hero { 
+	height: 900px;
+	background: url("./img/back.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.info { 
+	height: 800px;
+	background: url("./img/back1.jpg") center/cover no-repeat ;
+	backdrop-filter: brightness(40%);
+}
+.hero__container {
   display: flex;               
-  align-items: flex-start;     
+  align-items: start;     
   justify-content: space-between; 
-  gap: 2rem;                   
-  padding: 4rem 0;     
+  gap: 2rem;                
+  max-width: 1240px;      
+  width: 100%;            
+  margin: 0 auto;        
+  padding: 7rem 0px;
+}
+.hero__desc {
+	font-family: "Manrope", sans-serif; 
+	font-size: 1.125rem;                
+	font-weight: 500;  
+	color: rgba(255,255,255,0.75);                                    
+	line-height: 1.6;                   
+	margin-bottom: 2rem;               
+	max-width: 480px;  
+}
+
+.btn {
+	font-family: "Manrope", sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	width: 260px;
+	height: 55px;
+	border-radius: 10px;
+	background: #222729;
+	color: #ffffff;
+	border: 1px solid #4fd1c5;
+	cursor: pointer;
+	transition: 
+    background-color 0.3s ease, 
+    transform 0.2s ease-in-out;
+	line-height: 1.5;    
+}
+.btn:hover {
+	background: linear-gradient(90deg, #FFD700, #e49a4b);
+	-webkit-background-clip: text;
+	color: transparent;
+	background: #222729;
+	box-shadow:
+	0 0 1em rgb(0, 255, 255),
+	0 0 0.1em rgb(0, 255, 255);
+	color:rgb(0, 255, 255);
+	transform: scale(1.02);
+}
+.btn:active {
+	transform: scale(0.98);
 }
 
 
 .hero__media {
-	border-radius: 20px;
-	width: 500px;
-	height: 650px;
-	background-color: #222;
-
+	display: flex;
+	justify-content: center;    
+	align-items: center;
+	width: 480px;
+	height: 425px;
+	background: url(./img/parchment_gray_silk_transparent.png) center/cover no-repeat;
+}
+.media__title {
+    font-family: "HeliosExt", cursive;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+	color: #272727;
+}
+.media__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;     
+  gap: 1.5rem;                
+}
+/* ИКОНКИ */
+.media__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;                 
+}
+.chat__icon {
+	flex-shrink: 0;            
+	width: 60px;                
+	height: 50px;
+}
+.book__icon {
+	flex-shrink: 0;             
+	width: 60px;               
+	height: 45px;
+}
+.net__icon {
+	flex-shrink: 0;             
+	width: 60px;               
+	height: 55px;
+}
+.media__textBox {
+  display: flex;
+  flex-direction: column;
 }
 
+.media__text {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #272727;
+  margin-bottom: 0.25rem;
+}
+
+.media__desc {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: rgb(41, 41, 41);
+  line-height: 1.4;
+}
+.arow {
+	margin-top: 5rem;
+    margin-left: 1rem;
+}
 footer {
 	padding-inline: 20px;
 	height: 80px;
